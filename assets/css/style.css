@@ -25,11 +25,23 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(130% 90% at 88% 100%, transparent 20%, var(--bg) 75%),
+    linear-gradient(200deg, rgba(216, 172, 92, 0.05), transparent 45%),
+    url("../img/chameleon-bg.jpg");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: right bottom, left top, right bottom;
+  background-size: cover, cover, min(640px, 65vw) auto;
+  background-attachment: fixed, fixed, fixed;
   color: var(--text);
   font-family: "Manrope", "Segoe UI", Arial, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+@media (max-width: 720px) {
+  body { background-size: cover, cover, min(420px, 85vw) auto; }
 }
 
 img { max-width: 100%; display: block; }
